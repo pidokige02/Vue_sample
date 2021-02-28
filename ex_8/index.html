@@ -1,0 +1,39 @@
+<!--  what was learned
+      Components are blocks of code, grouped together within a custom element
+      Components make applications more manageable by breaking up the whole into reusuable parts that have their own structure and behavior
+      Data on a component must be a function
+      Props are used to pass data from parent to child
+      We can specify requirements for the props a component is receiving
+      Props are fed into a component through a custom attribute
+      Props can be dynamically bound to the parent’s data
+      Vue dev tools provide helpful insight about your components
+-->
+
+<head>
+  <link rel="stylesheet" href="../product_style.css">
+</head>
+
+
+<div class="nav-bar"></div>
+
+<div id="app">
+  <product :premium="premium"></product>
+  <!--  We’ve given our product component a prop, or a custom attribute, called premium. 
+        We are binding that custom attribute : to the premium that lives in our instance’s data. 
+        "premium" comes from root instance below 
+          var app = new Vue({
+            el: '#app',
+            data: {
+            premium: false
+            }
+          })
+  -->
+</div> 
+
+<script src="../vue.js"></script>
+
+<!--
+ <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+ -->
+
+ <script src="main.js"></script>

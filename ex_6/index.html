@@ -1,0 +1,64 @@
+<head>
+  <link rel="stylesheet" href="../product_style.css">
+</head>
+
+<div class="nav-bar"></div>
+
+<div id="app">
+  
+  <div class="product">
+  
+    <div class="product-image">
+      <img :src="image" />
+    </div>
+
+    <div class="product-info">
+      <h1>{{ product }}</h1>
+      <p v-if="inStock">In Stock</p>
+      <p v-else>Out of Stock</p>
+
+      <ul>
+        <li v-for="detail in details">{{ detail }}</li>
+      </ul>
+      
+      <!--when we hover over the blue box and the blue socks appear, 
+        hover over the green box and the green socks appear. t
+        this code demonstrates how to use style binding -->
+      <div class="color-box"
+      v-for="variant in variants" 
+      :key="variant.variantId"
+      :style="{ backgroundColor: variant.variantColor }"
+      @mouseover="updateProduct(variant.variantImage)" 
+      >
+      </div> 
+
+      <!--
+      :disabled="!inStock" only doesn’t change the appearance of the button. In other words, the button still appears clickable, even though it’s not  
+      We’re using the v-bind directive’s shorthand : to bind to our button’s class. 
+      Inside the brackets we’re determining the presence of the disabled-button class by the truthiness of the data property inStock.  
+      this code demonstrate how to use class binding
+      -->
+      <button v-on:click="addToCart"
+      :disabled="!inStock"
+      :class="{ disabledButton: !inStock }"
+      >
+      Add to cart
+      </button>
+
+      <div class="cart">
+        <p>Cart({{ cart }})</p>
+      </div>
+
+    </div>  
+    
+  </div>
+  
+</div> 
+
+<!-- 
+ <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+ -->
+
+ <script src="../vue.js"></script>
+
+ <script src="main.js"></script>
