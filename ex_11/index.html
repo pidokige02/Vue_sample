@@ -1,0 +1,23 @@
+<!--
+   we’ll learn how to add tabs to our application and implement a simple solution for global event communication.
+-->
+<head>
+  <link rel="stylesheet" href="../product_style.css">
+</head>
+
+<div class="nav-bar"></div>
+
+<div id="app">
+  <div class="cart">
+    <p>Cart({{ cart.length }})</p>
+  </div>
+  <product :premium="premium" @add-to-cart="updateCart"></product>
+</div> 
+
+<script src="../vue.js"></script>
+
+<!--
+ <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+ -->
+
+ <script src="main.js"></script>
