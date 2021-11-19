@@ -54,7 +54,7 @@ Vue.component('product', {
             </ul>
         </div>
        
-       <product-review @review-submitted="addReview"></product-review>
+      <product-review @review-submitted="addReview"></product-review>
     
     </div>
    `,

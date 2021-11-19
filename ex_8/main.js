@@ -30,7 +30,7 @@ Vue.component('product', {
   // Use a template literal, with back ticks.
   // a component’s template should only return one element.
   template: `   
-   <div class="product">
+  <div class="product">
         
       <div class="product-image">
         <img :src="image" />
@@ -45,11 +45,11 @@ Vue.component('product', {
           <product-details :details="details"></product-details>
 
           <div class="color-box"
-               v-for="(variant, index) in variants" 
-               :key="variant.variantId"
-               :style="{ backgroundColor: variant.variantColor }"
-               @mouseover="updateProduct(index)"
-               >
+              v-for="(variant, index) in variants" 
+              :key="variant.variantId"
+              :style="{ backgroundColor: variant.variantColor }"
+              @mouseover="updateProduct(index)"
+              >
           </div> 
 
           <button v-on:click="addToCart" 
@@ -63,10 +63,10 @@ Vue.component('product', {
             <p>Cart({{ cart }})</p>
           </div>
 
-       </div>  
+      </div>  
     
     </div>
-   `,
+  `,
 
    // Since data is now a function that returns a data object, each component will definitely have its own data. 
    // If data weren’t a function, each product component would be sharing the same data everywhere it was used
